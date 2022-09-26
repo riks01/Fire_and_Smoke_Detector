@@ -76,13 +76,13 @@ if (choice == "Image"):
 
     # storing the uploaded file into static folder
     if image_file is not None:
-        with open('./static/photo.jpg', 'wb') as f:
+        with open('photo.jpg', 'wb') as f:
             f.write(image_file.getbuffer())
 
     bt_image = st.button('Predict')
 
     if bt_image:
-        path = r'.\static\photo.jpg'
+        path = 'photo.jpg'
         test_image = image.load_img(path, target_size=(224, 224))
         test_image = image.img_to_array(test_image)
         test_image = test_image / 255
